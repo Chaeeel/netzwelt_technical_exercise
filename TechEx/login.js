@@ -56,7 +56,7 @@ loginForm.addEventListener('submit', async (event) => {
     const username = usernameInput.value;
     const password = passwordInput.value;
 
-    const response = await fetch('https://www.melivecode.com/api/login', {
+    const response = await fetch('http://localhost:3000/api/Account/SignIn', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -79,7 +79,7 @@ window.onload = async () => {
         window.location.href = 'login.html';
     } else {
         // Fetch and display hierarchical tree from the /Territories/All endpoint
-        const treeResponse = await fetch('https://netzwelt-devtest.azurewebsites.net/Territories/All');
+        const treeResponse = await fetch('http://localhost:3000/api/Territories/All');
         const treeData = await treeResponse.json();
         const territoryTree = document.getElementById('territoryTree');
         displayTree(treeData, territoryTree);
